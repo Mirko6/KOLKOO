@@ -4,6 +4,9 @@ import unidecode
 import pandas as pd
 import numpy as np
 from sklearn.metrics import classification_report
+from googletrans import Translator
+
+translator = Translator()
 
 komentare = pd.read_csv("https://raw.githubusercontent.com/shegood/hatespeech_classification/main/komentare.csv")
 komentare = komentare.dropna()
@@ -137,7 +140,8 @@ client = authenticate_client()
 
 def my_sentiment_analysis(document: string) -> Boolean:
     #sem vloz preklad <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    response = client.analyze_sentiment(documents=[document])[0]
+    document_translated = translator.translate(document, src='sk').text
+    response = client.analyze_sentiment(documents=[document_translated])[0]
     if response.confidence_scores.negative <= 0.4:
         return False
     
