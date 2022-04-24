@@ -1,3 +1,4 @@
 nosync.nosync
 *.pickle
 Reference data
+*__pycache__*
