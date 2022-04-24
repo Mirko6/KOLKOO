@@ -1,5 +1,5 @@
 {
-    "manifest_version": 1,
+    "manifest_version": 2,
     "name": "Temper",
     "version": "1.0.0",
     "description": "Protect the people around you from your angry messages",
