@@ -137,7 +137,7 @@ client = authenticate_client()
 
 def my_sentiment_analysis(document: string) -> Boolean:
     #sem vloz preklad <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    response = client.analyze_sentiment(documents=[document])
+    response = client.analyze_sentiment(documents=[document])[0]
     if response.confidence_scores.negative <= 0.4:
         return False
     
