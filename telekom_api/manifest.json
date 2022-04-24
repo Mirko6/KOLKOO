@@ -1,0 +1,15 @@
+{
+    "manifest_version": 1,
+    "name": "Temper",
+    "version": "1.0.0",
+    "description": "Protect the people around you from your angry messages",
+    "short_name": "Temper",
+    "permissions": ["activeTab", "<all_urls>"],
+    "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content.js"] 
+    }]
+
+
+}
